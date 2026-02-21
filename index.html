@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reprise Music & Art Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --black: #0A0A0A;
+      --charcoal: #1A1A1A;
+      --dark-gray: #2A2A2A;
+      --medium-gray: #6A6A6A;
+      --light-gray: #9A9A9A;
+      --off-white: #F5F5F3;
+      --cream: #FAF9F7;
+      --white: #FFFFFF;
+      --accent: #5BA39A;
+      --warm: #B85C38;
+    }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--black);
+      line-height: 1.6;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+    }
+    
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--medium-gray);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    /* Navigation */
+    nav {
+      background: var(--white);
+      padding: 1rem 4rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--off-white);
+    }
+    
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+      color: var(--black);
+    }
+    
+    .logo img {
+      height: 100px;
+      width: auto;
+    }
+    
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+    }
+    
+    .nav-links a {
+      font-size: 0.85rem;
+      color: var(--medium-gray);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--black);
+      border-bottom-color: var(--black);
+    }
+    
+    /* Hero */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 5rem 4rem;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero.light {
+      background: var(--cream);
+      color: var(--black);
+    }
+    
+    .hero.warm {
+      background: var(--warm);
+      color: var(--white);
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+    }
+    
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 550px;
+    }
+    
+    .hero-circle {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    
+    .hero-circle-1 {
+      top: 50%;
+      right: 10%;
+      width: 300px;
+      height: 300px;
+      transform: translateY(-50%);
+    }
+    
+    .hero-circle-2 {
+      top: 50%;
+      right: 8%;
+      width: 350px;
+      height: 350px;
+      transform: translateY(-50%);
+    }
+    
+    .hero.light .hero-circle {
+      border-color: rgba(0,0,0,0.05);
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      margin-top: 3rem;
+      padding: 1.1rem 3rem;
+      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
+    }
+    
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+    
+    .btn-solid {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+    
+    .btn-solid:hover {
+      background: var(--charcoal);
+    }
+    
+    /* Announcement Banner */
+    .announcement {
+      background: var(--warm);
+      padding: 1.25rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .announcement:hover {
+      background: #a34f30;
+    }
+    
+    .announcement-badge {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
+      padding: 0.25rem 0.75rem;
+    }
+    
+    .announcement-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    
+    .announcement-arrow {
+      color: rgba(255,255,255,0.5);
+      font-size: 1.25rem;
+    }
+    
+    /* Sections */
+    section {
+      padding: 5rem 4rem;
+    }
+    
+    section.cream {
+      background: var(--cream);
+    }
+    
+    section.dark {
+      background: var(--black);
+      color: var(--white);
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .container-narrow {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.75rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+    
+    .section-header p {
+      font-size: 1rem;
+      color: var(--medium-gray);
+      font-weight: 300;
+    }
+    
+    .section-header.light h2 {
+      color: var(--white);
+    }
+    
+    .section-header.light p {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    /* About Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .about-grid h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-grid p {
+      color: var(--medium-gray);
+      line-height: 1.9;
+      font-weight: 300;
+    }
+    
+    .about-image {
+      aspect-ratio: 1;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .about-image img {
+      max-width: 70%;
+      max-height: 70%;
+      opacity: 0.8;
+    }
+    
+    /* Program Cards Grid */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    
+    .program-card {
+      background: var(--white);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      border: 1px solid var(--off-white);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .program-card:hover {
+      border-color: var(--light-gray);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+    
+    .program-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .program-card-image {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .program-card-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .program-card:hover .program-card-image::after {
+      opacity: 1;
+    }
+    
+    .program-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .program-card:hover .program-card-image img {
+      transform: scale(1.08);
+    }
+    
+    .program-card h3 {
+      font-size: 1.4rem;
+      margin: 1.75rem 1.75rem 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .program-card:hover h3 {
+      color: var(--accent);
+    }
+    
+    .program-card > p {
+      color: var(--medium-gray);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      font-weight: 300;
+      margin: 0 1.75rem 1.5rem;
+    }
+    
+    .program-meta {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.25rem 1.75rem;
+      border-top: 1px solid var(--off-white);
+      background: var(--cream);
+    }
+    
+    .program-meta span:first-child {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .program-meta span:last-child {
+      font-size: 0.75rem;
+      color: var(--light-gray);
+      font-weight: 400;
+    }
+    
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .pricing-card {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+    
+    .pricing-card.featured {
+      background: rgba(255,255,255,0.03);
+    }
+    
+    .pricing-badge {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+    }
+    
+    .pricing-card .duration {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1rem;
+    }
+    
+    .pricing-card .price {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    
+    .pricing-card .note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 300;
+    }
+    
+    .pricing-notes {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 300;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 5rem 4rem;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-section p {
+      color: var(--medium-gray);
+      font-size: 1.05rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    
+    /* Programs Page - Tabs */
+    .tabs {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--off-white);
+      padding-bottom: 1.5rem;
+    }
+    
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1.5rem;
+      padding-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .tab-btn::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .tab-btn.active::before,
+    .tab-btn:hover::before {
+      width: 100%;
+    }
+    
+    .tab-btn.active,
+    .tab-btn:hover {
+      color: var(--black);
+    }
+    
+    .tab-btn span {
+      display: inline-block;
+      background: var(--off-white);
+      padding: 0.2rem 0.5rem;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      margin-left: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-btn.active span,
+    .tab-btn:hover span {
+      background: var(--accent);
+      color: var(--white);
+    }
+    
+    /* Program Detail Cards */
+    .program-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .program-detail-card {
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--off-white);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .program-detail-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.4s ease;
+    }
+    
+    .program-detail-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .program-detail-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: var(--light-gray);
+    }
+    
+    .program-detail-card:hover::before {
+      transform: scaleY(1);
+    }
+    
+    .program-detail-card:hover::after {
+      opacity: 0.03;
+    }
+    
+    .program-detail-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .program-detail-card:hover h4 {
+      color: var(--accent);
+    }
+    
+    .program-detail-card p {
+      color: var(--medium-gray);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      font-weight: 300;
+      position: relative;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .program-pricing-note {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--medium-gray);
+      font-weight: 300;
+    }
+    
+    /* Paint Gallery */
+    .paint-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    
+    .paint-item {
+      aspect-ratio: 1;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .paint-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .paint-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .paint-item .paint-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: var(--white);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .paint-item.featured {
+      border: 2px solid var(--warm);
+    }
+    
+    .paint-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+    
+    /* Paint Pricing */
+    .paint-pricing {
+      text-align: center;
+      padding: 3rem;
+    }
+    
+    .paint-pricing h3 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    
+    .paint-price-display {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .paint-price-display .amount {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+    }
+    
+    .paint-price-display .per {
+      font-size: 1rem;
+      color: var(--medium-gray);
+      font-weight: 300;
+    }
+    
+    .paint-pricing .details {
+      color: var(--light-gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+    
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+    }
+    
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-info .role {
+      color: var(--light-gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+    
+    .contact-item {
+      margin-bottom: 2rem;
+    }
+    
+    .contact-item label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--light-gray);
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-item p {
+      font-size: 1.1rem;
+    }
+    
+    .contact-social {
+      padding-top: 2rem;
+      border-top: 1px solid var(--off-white);
+    }
+    
+    .contact-social a {
+      color: var(--black);
+      text-decoration: none;
+      margin-right: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1.25rem;
+      border: none;
+      border-bottom: 1px solid var(--light-gray);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      background: transparent;
+      margin-bottom: 1.5rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-bottom-color: var(--black);
+    }
+    
+    .contact-form textarea {
+      resize: none;
+      height: 120px;
+    }
+    
+    .contact-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    /* Newsletter */
+    .newsletter {
+      padding: 4rem 4rem;
+      text-align: center;
+    }
+    
+    .newsletter h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .newsletter p {
+      color: var(--medium-gray);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--off-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    
+    .newsletter-form button {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 4rem 4rem 3rem;
+    }
+    
+    .footer-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-brand h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    
+    .footer-brand p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 300px;
+    }
+    
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    
+    .footer-col p,
+    .footer-col a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      line-height: 2.2;
+      font-weight: 300;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .footer-col a.accent {
+      color: var(--accent);
+    }
+    
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      font-weight: 300;
+    }
+    
+    /* STEAM Tag */
+    .steam-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      background: var(--warm);
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    /* Featured Card */
+    .featured-card {
+      border-color: var(--warm) !important;
+      background: linear-gradient(135deg, rgba(184,92,56,0.03) 0%, transparent 100%);
+    }
+    
+    .featured-card::before {
+      background: var(--warm) !important;
+      transform: scaleY(1) !important;
+    }
+    
+    .featured-card:hover h4 {
+      color: var(--warm) !important;
+    }
+    
+    /* Summer Page Dino Gallery */
+    .dino-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    
+    .dino-item {
+      aspect-ratio: 3/4;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .dino-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .dino-item .dino-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: var(--white);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .dino-info {
+      padding: 2rem 0;
+    }
+    
+    .dino-info p {
+      color: var(--medium-gray);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+    
+    .dino-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .dino-detail-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--off-white);
+      padding-bottom: 1rem;
+    }
+    
+    .dino-detail-row label {
+      color: var(--light-gray);
+      font-size: 0.85rem;
+      font-weight: 300;
+    }
+    
+    .dino-detail-row span {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 3rem; }
+      .programs-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .paint-gallery { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+    }
+    
+    @media (max-width: 768px) {
+      section { padding: 4rem 2rem; }
+      nav { padding: 1rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { padding: 4rem 2rem; }
+      .hero h1 { font-size: 2.5rem; }
+      .programs-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .paint-gallery { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .tabs { flex-wrap: wrap; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <img src="REPRISE.svg" alt="Reprise Logo">
+        <span class="logo-text">Reprise</span>
+      </a>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#paint">Paint & Listen</a>
+        <a href="#summer">Summer 2026</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <section id="home">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Music & Art Programs for Libraries</p>
+        <h1>Where creativity finds its voice</h1>
+        <p>We bring innovative, engaging music and art programming to libraries and community organizations — nurturing creativity from first notes to lifelong learning.</p>
+        <a href="#contact" class="btn btn-outline">Book a Program</a>
+      </div>
+    </div>
+
+    <!-- Summer 2026 Banner -->
+    <a href="#summer" class="announcement">
+      <span class="announcement-badge">New for Summer 2026</span>
+      <span class="announcement-text">"Unearth a Story" — STEAM programs where music meets paleontology</span>
+      <span class="announcement-arrow">→</span>
+    </a>
+
+    <!-- About -->
+    <section>
+      <div class="container-narrow about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Nearly two decades of bringing joy through music</h2>
+          <p>Founded by Adam King, Reprise Music & Art Programs delivers high-quality, engaging experiences designed to make music accessible to everyone. We believe music education is essential to personal growth — and we make it unforgettable.</p>
+        </div>
+        <div class="about-image">
+          <img src="AdamGuitar.avif" alt="Adam King playing guitar" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Overview -->
+    <section class="cream">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">What We Offer</p>
+          <h2>Programs for every stage of life</h2>
+        </div>
+        <div class="programs-grid">
+          <div class="program-card" onclick="location.href='#programs'">
+            <div class="program-card-image">
+              <img src="InstrumentsKids.avif" alt="Early childhood music">
+            </div>
+            <h3>Early Childhood</h3>
+            <p>Musical exploration through movement, instruments, and song. Building the foundation for a lifetime of music appreciation for ages 0-5.</p>
+            <div class="program-meta">
+              <span>11 programs</span>
+              <span>30 min</span>
+            </div>
+          </div>
+          <div class="program-card" onclick="location.href='#programs'">
+            <div class="program-card-image">
+              <img src="KidsUke.avif" alt="Elementary music programs">
+            </div>
+            <h3>Elementary</h3>
+            <p>Interactive workshops from junkyard orchestra to music olympics — hands-on experiences that make learning an adventure.</p>
+            <div class="program-meta">
+              <span>14 programs</span>
+              <span>60 min</span>
+            </div>
+          </div>
+          <div class="program-card" onclick="location.href='#programs'">
+            <div class="program-card-image">
+              <img src="TeensGuitar.avif" alt="Teen music programs">
+            </div>
+            <h3>Teens</h3>
+            <p>Music production, songwriting, guitar effects, and real skills for aspiring musicians. Programs designed for autonomy and relevance.</p>
+            <div class="program-meta">
+              <span>14 programs</span>
+              <span>60 min</span>
+            </div>
+          </div>
+          <div class="program-card" onclick="location.href='#programs'">
+            <div class="program-card-image">
+              <img src="AdultGuitar.avif" alt="Adult music programs">
+            </div>
+            <h3>Adults</h3>
+            <p>Guitar, ukulele, and unique musical experiences. It's never too late to start — or rediscover — your musical journey.</p>
+            <div class="program-meta">
+              <span>8 programs</span>
+              <span>60 min</span>
+            </div>
+          </div>
+          <div class="program-card" onclick="location.href='#programs'">
+            <div class="program-card-image">
+              <img src="SeniorGuitar.avif" alt="Senior music programs">
+            </div>
+            <h3>Seniors</h3>
+            <p>Memory sessions, sing-alongs, and therapeutic programs designed with care to build connection and joy.</p>
+            <div class="program-meta">
+              <span>7 programs</span>
+              <span>60 min</span>
+            </div>
+          </div>
+          <div class="program-card" onclick="location.href='#paint'">
+            <div class="program-card-image">
+              <img src="PaintersandListeners.avif" alt="Paint and Listen">
+            </div>
+            <h3>Paint & Listen</h3>
+            <p>Create beautiful art while enjoying live guitar accompaniment — a unique, relaxing creative experience.</p>
+            <div class="program-meta">
+              <span>20 designs</span>
+              <span>70-90 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Strip -->
+    <section style="padding: 0; display: grid; grid-template-columns: repeat(4, 1fr);">
+      <div style="aspect-ratio: 4/3; overflow: hidden;">
+        <img src="MusicPettingZoo.avif" alt="Music Petting Zoo" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="aspect-ratio: 4/3; overflow: hidden;">
+        <img src="KidsUke2.avif" alt="Kids playing ukulele" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="aspect-ratio: 4/3; overflow: hidden;">
+        <img src="PaintersandListeners.avif" alt="Paint and Listen session" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="aspect-ratio: 4/3; overflow: hidden;">
+        <img src="AdamGuitar.avif" alt="Adam King" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="dark">
+      <div class="container-narrow">
+        <div class="section-header light">
+          <p class="eyebrow" style="color: rgba(255,255,255,0.5);">Investment</p>
+          <h2>Transparent pricing</h2>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <p class="duration">30 min</p>
+            <p class="price">$150</p>
+            <p class="note">PreK-K</p>
+          </div>
+          <div class="pricing-card featured">
+            <span class="pricing-badge">Popular</span>
+            <p class="duration">60 min</p>
+            <p class="price">$195</p>
+            <p class="note">Standard</p>
+          </div>
+          <div class="pricing-card">
+            <p class="duration">90 min</p>
+            <p class="price">$250</p>
+            <p class="note">Extended</p>
+          </div>
+          <div class="pricing-card">
+            <p class="duration">4 Sessions</p>
+            <p class="price">$600</p>
+            <p class="note">Camp</p>
+          </div>
+        </div>
+        <div class="pricing-notes">
+          <span>Paint & Listen: +$12/person materials</span>
+          <span>Multi-department: 15% off 3+ programs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Ready to bring music to your community?</h2>
+      <p>Let's create programming your patrons will remember</p>
+      <a href="#contact" class="btn btn-solid">Get in Touch</a>
+    </section>
+  </section>
+
+  <!-- Programs Page -->
+  <section id="programs" style="display: none;">
+    <div class="hero light">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+      <div class="hero-content">
+        <h1>Our Programs</h1>
+        <p>Engaging programming designed for every stage of life — from musical exploration with toddlers to therapeutic sessions with seniors.</p>
+      </div>
+    </div>
+
+    <section class="cream">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="birthK">Birth-K <span>11</span></button>
+          <button class="tab-btn" data-tab="elementary">Elementary <span>14</span></button>
+          <button class="tab-btn" data-tab="teens">Teens <span>14</span></button>
+          <button class="tab-btn" data-tab="adults">Adults <span>8</span></button>
+          <button class="tab-btn" data-tab="seniors">Seniors <span>7</span></button>
+        </div>
+
+        <!-- Birth-K -->
+        <div id="birthK" class="tab-content active">
+          <div class="program-detail-grid">
+            <div class="program-detail-card">
+              <h4>Pop Music Party</h4>
+              <p>A high-energy dance party featuring age-appropriate music from popular culture. Children move, groove, and celebrate the joy of music together.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music on the Farm</h4>
+              <p>Make adorable animal crafts while singing along with farm-themed songs. Children learn about animals through rhythm, movement, and creativity.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music with Bluey</h4>
+              <p>Family portraits, the Bluey theme song, magic xylophone adventures, and keepy uppey! A beloved character-themed musical experience.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Instrument Petting Zoo</h4>
+              <p>Touch and play a variety of string, percussion, and bell instruments. Children explore sounds, textures, and the basics of music-making.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music and Movement</h4>
+              <p>Clapping, stomping, swaying, and dancing to favorite songs. Children develop motor skills and rhythm awareness through joyful movement.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Story Time</h4>
+              <p>Read a musical story together, then create a live soundtrack using instruments and voices. Stories come alive through collaborative music-making.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Mindfulness</h4>
+              <p>Breathing exercises, focus techniques, and sound appreciation. Children learn to listen deeply and find calm through musical awareness.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Makers</h4>
+              <p>Make instruments to take home — percussion shakers, rubber band guitars, bell sticks, and kazoos. Hands-on crafting meets musical exploration.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Instrument Scavenger Hunt</h4>
+              <p>Hunt for hidden instruments around the space, learn their unique sounds, then practice playing together as a group orchestra.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music and Math</h4>
+              <p>Counting beats, clapping patterns, and discovering rhythm through numbers. Music + Math = FUN! STEAM learning through song.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music and Language</h4>
+              <p>Learn new words through rhyming songs, repeating word games, and call-and-response activities. Building vocabulary through music.</p>
+            </div>
+          </div>
+          <p class="program-pricing-note">30-minute programs · $150/session</p>
+        </div>
+
+        <!-- Elementary -->
+        <div id="elementary" class="tab-content">
+          <div class="program-detail-grid">
+            <div class="program-detail-card">
+              <h4>Junkyard Orchestra</h4>
+              <p>Transform recycled materials into working musical instruments. Children learn the science of sound while building something they can actually play. Environmental sustainability meets creative music-making.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Science of Sound</h4>
+              <p>Explore pitch, vibration, and frequency through hands-on experiments. Discover how sound waves work, why different instruments sound different, and the physics behind music. STEAM at its finest.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Olympics</h4>
+              <p>Musical chairs, freeze dance, rhythmic relay races, and more — all for medals! Children compete in fun, music-based challenges that build listening skills and coordination.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Cartoon Soundtrack</h4>
+              <p>Create original soundtracks for favorite cartoon clips. Children learn how music creates mood, tension, and humor while composing their own accompaniment.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Puppet Musical Theater</h4>
+              <p>Create simple puppets, then put on a musical performance complete with songs and sound effects. Storytelling, crafting, and music combine in one creative experience.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Drum Circle Jam</h4>
+              <p>Explore percussion instruments and rhythms from various cultures around the world. Children learn about global musical traditions while playing together as a drum circle.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Video Game Music</h4>
+              <p>Explore the iconic soundtracks of Minecraft, MarioKart, Plants vs. Zombies, and more. Discover how composers create memorable game music and try composing your own.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Disney Music Mania</h4>
+              <p>Sing and dance to beloved Disney songs from classic and contemporary films. A high-energy celebration of the music that defines childhood magic.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Superhero Soundtrack</h4>
+              <p>Move like your favorite heroes while exploring their iconic theme music. Discover how composers use music to make characters feel powerful, fast, or mysterious.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Songwriter's Showcase</h4>
+              <p>Learn song structure, write original lyrics, and compose simple melodies. The session culminates in a showcase where children perform their own original songs.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>World Explorer's Melodies</h4>
+              <p>Travel the globe through traditional music from different countries and cultures. Children learn about instruments, rhythms, and songs from around the world.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Memory Games</h4>
+              <p>Match instruments to their sounds, identify famous composers by their music, and test musical knowledge through fun competitive games.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Sound Sculptures</h4>
+              <p>Build three-dimensional sculptures that actually create sounds. Art meets engineering meets music in this creative STEAM workshop.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Musical Sci-Fi</h4>
+              <p>Journey through space with music and sound effects. Create alien soundscapes, compose spaceship themes, and explore how sci-fi films use music to build other worlds.</p>
+            </div>
+          </div>
+          <p class="program-pricing-note">60-minute programs · $195/session or $600 for 4-session camp</p>
+        </div>
+
+        <!-- Teens -->
+        <div id="teens" class="tab-content">
+          <div class="program-detail-grid">
+            <div class="program-detail-card">
+              <h4>General Guitar</h4>
+              <p>Learn guitar fundamentals and play a complete song in just four sessions. Covers basic chords, strumming patterns, and music reading. No experience necessary — beginners welcome.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>General Ukulele</h4>
+              <p>Learn ukulele fundamentals and play a complete song in four sessions. The ukulele's forgiving nature makes it perfect for beginners of any age.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>The Library's Got Talent</h4>
+              <p>Prepare and perform a 5-minute solo or duet act. Practice sessions build toward a final showcase performance. Build confidence, stage presence, and performance skills.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Karaoke Party</h4>
+              <p>Sing your heart out with thousands of songs to choose from. A fun, low-pressure way to explore vocal performance with friends.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Quiz Show</h4>
+              <p>Test your knowledge of genres, songs, artists, and music history in a competitive quiz format. Teams compete for prizes and bragging rights.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Songwriting Workshop</h4>
+              <p>Explore song structures, lyric writing techniques, and melody composition. Write and workshop original songs in a supportive creative environment.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Production & Recording</h4>
+              <p>Learn the basics of recording, mixing, and mastering music using professional software. Discover what goes into creating polished, release-ready tracks.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>60 Minute Musical</h4>
+              <p>Create and perform an original musical in just one hour. Write songs, develop characters, rehearse, and stage a performance — all in a single session.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Guitar Effects & Pedals</h4>
+              <p>Experiment with distortion, delay, reverb, wah, and other effects. Learn how professional guitarists shape their signature sounds using pedal boards.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Guitar Looping</h4>
+              <p>Create layered compositions using loop pedals. Build songs in real-time by recording and stacking guitar parts into complex arrangements.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Social Media & Music</h4>
+              <p>How TikTok, Instagram, and YouTube influence music trends. Explore viral sounds, algorithm-driven discovery, and how artists build audiences online.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music Escape Room</h4>
+              <p>Solve music-themed puzzles to escape! Decode musical notation, identify songs by ear, and crack rhythm-based combinations.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Harmonica Intro</h4>
+              <p>Learn basic harmonica techniques and take home your own harmonica to keep practicing. A portable, accessible entry into music-making. (+$6/person)</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Visualizing Sound</h4>
+              <p>Create abstract art inspired by music. Explore synesthesia, the relationship between sound and color, and translate music into visual expression.</p>
+            </div>
+          </div>
+          <p class="program-pricing-note">60-minute programs · $195/session or $600 for 4-session camp</p>
+        </div>
+
+        <!-- Adults -->
+        <div id="adults" class="tab-content">
+          <div class="program-detail-grid">
+            <div class="program-detail-card">
+              <h4>General Guitar</h4>
+              <p>Learn guitar fundamentals and play a complete song in four sessions. Perfect for beginners or those returning to music after years away. Covers basic chords, strumming, and reading.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>General Ukulele</h4>
+              <p>Learn ukulele fundamentals in four accessible sessions. The ukulele's gentle learning curve makes it ideal for adult beginners seeking quick wins.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Ukulele Jam Bridging Generations</h4>
+              <p>An intergenerational program connecting adults with seniors through classic songs. Learn together, play together, and bridge age gaps through shared music.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Acoustic Coffeehouse Concert</h4>
+              <p>Perform in a cozy, coffeehouse-style setting. A low-key open mic experience for adults who want to share music in a supportive environment.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Guitar Building and Repair</h4>
+              <p>Learn guitar setups, maintenance, and basic repairs. Understand how your instrument works, how to keep it in optimal condition, and simple fixes you can do yourself.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Concept Conversations</h4>
+              <p>Deep-dive discussions of iconic albums — Pink Floyd's Dark Side of the Moon, The Beatles' Abbey Road, and more. Listen together, discuss artistic choices, and appreciate musical craft.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music for Healing</h4>
+              <p>Build coordination, memory, and fine motor skills through gentle instrument play. A therapeutic approach to music designed for wellness and recovery.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Harmonica Intro</h4>
+              <p>Learn basic harmonica techniques and take home your own instrument. A fun, portable way to make music anywhere. (+$6/person)</p>
+            </div>
+          </div>
+          <p class="program-pricing-note">60-minute programs · $195/session or $600 for 4-session camp</p>
+        </div>
+
+        <!-- Seniors -->
+        <div id="seniors" class="tab-content">
+          <div class="program-detail-grid">
+            <div class="program-detail-card">
+              <h4>Sing-Along Classics</h4>
+              <p>Beloved songs from the 1950s through today. Sing together, share memories, and enjoy the music that defined generations. Lyric sheets provided.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Musical Memories Reminiscence</h4>
+              <p>Songs that trigger memories and inspire storytelling. A gentle, therapeutic program that uses music to unlock and share personal histories.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Musical Instrument Showcase</h4>
+              <p>Try various instruments at your own comfortable pace. Explore sounds, textures, and the joy of making music without pressure or performance expectations.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Musical Brain Teasers</h4>
+              <p>Puzzles, riddles, and trivia all related to music. Keep minds sharp while having fun with music-themed cognitive challenges.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Acoustic Coffeehouse Concert</h4>
+              <p>Enjoy a cozy live performance in a relaxed setting. Sit back, listen, and enjoy professional acoustic music tailored for senior audiences.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>Music for Healing</h4>
+              <p>Build coordination, memory, and strength through gentle, guided instrument play. A therapeutic program designed for physical and cognitive wellness.</p>
+            </div>
+            <div class="program-detail-card">
+              <h4>General Ukulele</h4>
+              <p>Learn ukulele at a relaxed, comfortable pace. The ukulele's small size and simple chords make it accessible for seniors at any skill level.</p>
+            </div>
+          </div>
+          <p class="program-pricing-note">60-minute programs · $195/session or $600 for 4-session camp</p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Paint & Listen Page -->
+  <section id="paint" style="display: none;">
+    <div class="hero" style="position: relative;">
+      <div class="hero-image-overlay" style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.4) 100%); z-index: 1;"></div>
+      <img src="AdamandNicolePaintandListen.avif" alt="Paint and Listen session" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+      <div class="hero-content" style="position: relative; z-index: 2;">
+        <p class="eyebrow" style="color: rgba(255,255,255,0.7);">A Unique Experience</p>
+        <h1>Paint & Listen</h1>
+        <p>Guided painting instruction meets live guitar accompaniment for a relaxing, creative experience unlike any other.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Gallery</p>
+          <h2>Choose your design</h2>
+          <p>20 painting options available — select when booking</p>
+        </div>
+        <div class="paint-gallery">
+          <!-- Row 1 -->
+          <div class="paint-item">
+            <img src="0f9369_5b36e1a72e884eb79394ed47e397884e_mv2.avif" alt="Winter Friend">
+            <span class="paint-name">Winter Friend</span>
+          </div>
+          <div class="paint-item">
+            <img src="UnderSeaLife.avif" alt="Under Sea Life">
+            <span class="paint-name">Under Sea Life</span>
+          </div>
+          <div class="paint-item">
+            <img src="SummerTreats.avif" alt="Summer Treats">
+            <span class="paint-name">Summer Treats</span>
+          </div>
+          <div class="paint-item">
+            <img src="ThankfulPumpkins.avif" alt="Thankful Pumpkins">
+            <span class="paint-name">Thankful Pumpkins</span>
+          </div>
+          <div class="paint-item">
+            <img src="NorthernLights.avif" alt="Northern Lights">
+            <span class="paint-name">Northern Lights</span>
+          </div>
+          <!-- Row 2 -->
+          <div class="paint-item">
+            <img src="FreedomLake.avif" alt="Freedom Lake">
+            <span class="paint-name">Freedom Lake</span>
+          </div>
+          <div class="paint-item">
+            <img src="HolidayCamper.avif" alt="Holiday Camper">
+            <span class="paint-name">Holiday Camper</span>
+          </div>
+          <div class="paint-item">
+            <img src="HarvestWalk.avif" alt="Harvest Walk">
+            <span class="paint-name">Harvest Walk</span>
+          </div>
+          <div class="paint-item">
+            <img src="LikesideSunset.avif" alt="Lakeside Sunset">
+            <span class="paint-name">Lakeside Sunset</span>
+          </div>
+          <div class="paint-item">
+            <img src="SnowyBarn.avif" alt="Snowy Barn">
+            <span class="paint-name">Snowy Barn</span>
+          </div>
+          <!-- Row 3 -->
+          <div class="paint-item">
+            <img src="DesertEvening.avif" alt="Desert Evening">
+            <span class="paint-name">Desert Evening</span>
+          </div>
+          <div class="paint-item">
+            <img src="SnowyRiver.avif" alt="Snowy River">
+            <span class="paint-name">Snowy River</span>
+          </div>
+          <div class="paint-item">
+            <img src="LamppostJazz.avif" alt="Lamppost Jazz">
+            <span class="paint-name">Lamppost Jazz</span>
+          </div>
+          <div class="paint-item">
+            <img src="KeukaLake.avif" alt="Keuka Lake">
+            <span class="paint-name">Keuka Lake</span>
+          </div>
+          <div class="paint-item">
+            <img src="GuitarryStarryNight.avif" alt="Guitarry Starry Night">
+            <span class="paint-name">Guitarry Starry Night</span>
+          </div>
+          <!-- Row 4 -->
+          <div class="paint-item">
+            <img src="CupcakeDelight.avif" alt="Cupcake Delight">
+            <span class="paint-name">Cupcake Delight</span>
+          </div>
+          <div class="paint-item">
+            <img src="MushroomGarden.avif" alt="Mushroom Garden">
+            <span class="paint-name">Mushroom Garden</span>
+          </div>
+          <div class="paint-item">
+            <img src="JarofSummer.avif" alt="Jar of Summer">
+            <span class="paint-name">Jar of Summer</span>
+          </div>
+          <div class="paint-item">
+            <img src="DandelionWishes.avif" alt="Dandelion Wishes">
+            <span class="paint-name">Dandelion Wishes</span>
+          </div>
+          <div class="paint-item featured">
+            <img src="Prehistoric.avif" alt="Prehistoric">
+            <span class="paint-name">Prehistoric 🦕</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream">
+      <div class="paint-pricing">
+        <h3>Investment</h3>
+        <div class="paint-price-display">
+          <span class="amount">$250</span>
+          <span class="per">+ $12/person</span>
+        </div>
+        <p class="details">70-90 minutes · Maximum 22 participants</p>
+      </div>
+    </section>
+
+    <section class="dark" style="text-align: center;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Book a session</h2>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </section>
+  </section>
+
+  <!-- Summer 2026 Page -->
+  <section id="summer" style="display: none;">
+    <div class="hero warm" style="position: relative; overflow: hidden;">
+      <img src="UnearthaStory2.jpg" alt="Unearth a Story" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15;">
+      <div class="hero-content" style="position: relative; z-index: 2;">
+        <img src="UnearthaStoryTitle.jpeg" alt="Unearth a Story" style="height: 80px; margin-bottom: 1.5rem;">
+        <p class="eyebrow" style="color: rgba(255,255,255,0.8); margin-top: 1rem;">CSLP Summer Reading 2026</p>
+        <h1>Music Meets Paleontology</h1>
+        <p>NEW STEAM programs connecting music to the prehistoric world. Build instruments from "excavated" materials, discover how Jurassic Park created dinosaur sounds, and more.</p>
+        <a href="#contact" class="btn btn-outline">Book Now</a>
+      </div>
+    </div>
+    
+    <!-- CSLP Banner -->
+    <div style="background: #d4d9a2; padding: 2rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem;">
+      <img src="UnearthaStorySlogan_jpg.webp" alt="Unearth a Story - The Dinosaurs are Coming" style="height: 100px;">
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">STEAM Programs</p>
+          <h2>Music meets science</h2>
+          <p>$250/session or $800 for 4-session series</p>
+        </div>
+        <div class="program-detail-grid">
+          <div class="program-detail-card featured-card">
+            <span class="steam-tag">STEAM</span>
+            <h4>Excavation Orchestra</h4>
+            <p>Children "excavate" materials from a dig site and build working instruments from their finds — PVC tubes, containers, rubber bands, sticks, coconut shells. Like paleontologists piecing together dinosaurs, kids piece together an orchestra, learning sound science along the way. The session culminates in a group performance of a "prehistoric symphony."</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-gray);">60 min · Ages 6-11 · $250</p>
+          </div>
+          <div class="program-detail-card featured-card">
+            <span class="steam-tag">STEAM</span>
+            <h4>Dino Sound Lab</h4>
+            <p>How did Jurassic Park create the T-Rex roar? What did a Parasaurolophus — the "trombone dinosaur" — actually sound like? Kids explore where paleontology meets acoustics, build PVC pipe "crests" demonstrating how tube length changes pitch, then create their own dinosaur vocalizations using layered sounds.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-gray);">60 min · Ages 8-12 · $250</p>
+          </div>
+          <div class="program-detail-card featured-card">
+            <span class="steam-tag">STEAM</span>
+            <h4>Prehistoric Instrument Petting Zoo</h4>
+            <p>Each station represents a geological era with different instruments. Kids explore real instruments alongside prehistoric-inspired creations — PVC pan pipes ("bone flutes"), bucket drums ("cave percussion"), rubber-band box guitars. Passport system where children earn fossil stamps at each station.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-gray);">60 min drop-in · Ages 3-12 · $250</p>
+          </div>
+          <div class="program-detail-card featured-card">
+            <span class="steam-tag">STEAM</span>
+            <h4>Fossil Record Escape Room</h4>
+            <p>Teams decode "fossilized" musical notation, solve rhythm puzzles embedded in geological layers, identify dinosaur species by their reconstructed "calls," and crack a final combination using note values. Clues can be hidden in library stacks using call numbers from the science section.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-gray);">45-60 min · Ages 12-18 · $250</p>
+          </div>
+          <div class="program-detail-card featured-card">
+            <span class="steam-tag">STEAM</span>
+            <h4>Jurassic Soundtrack Lab</h4>
+            <p>Teens analyze and remix iconic movie scores — the Jurassic Park theme by John Williams is instantly recognizable. Using GarageBand or similar software, they create original soundtracks for dinosaur documentary footage, learning how film composers use orchestration, dynamics, and leitmotifs.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-gray);">60-75 min · Ages 13-18 · $250</p>
+          </div>
+          <div class="program-detail-card featured-card">
+            <span class="steam-tag">4-Session Series</span>
+            <h4>Fossil Strum Ukulele</h4>
+            <p>Multi-week ukulele course where each session "unearths" a new chord and skill. Session 1 excavates the C chord ("the fossil everyone finds first"), Session 2 digs up G and Am, building toward a group performance of themed songs. The paleontology metaphor makes progression feel like discovery.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-gray);">4 sessions · Ages 13+ · $800</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream">
+      <div class="container-narrow">
+        <div class="section-header">
+          <p class="eyebrow">Paint & Listen</p>
+          <h2>Dinosaur Collection</h2>
+          <p>Prehistoric art with live guitar accompaniment</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center;">
+          <div class="dino-gallery">
+            <div class="dino-item">
+              <img src="Prehistoric.avif" alt="Prehistoric Sunset" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="dino-name">Sunset Silhouette</span>
+            </div>
+            <div class="dino-item">
+              <img src="DinosaurDawn.png" alt="Dinosaur Dawn" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="dino-name">Dinosaur Dawn</span>
+            </div>
+            <div class="dino-item">
+              <img src="DinosaurTwilight.png" alt="Dinosaur Twilight" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="dino-name">Dinosaur Twilight</span>
+            </div>
+          </div>
+          <div class="dino-info">
+            <p>Paint stunning dinosaur silhouette scenes while enjoying live guitar music. Choose from beautiful prehistoric landscapes perfect for the "Unearth a Story" summer reading theme.</p>
+            <div class="dino-details">
+              <div class="dino-detail-row">
+                <label>Duration</label>
+                <span>70-90 minutes</span>
+              </div>
+              <div class="dino-detail-row">
+                <label>Investment</label>
+                <span>$250 + $12/person</span>
+              </div>
+              <div class="dino-detail-row">
+                <label>Capacity</label>
+                <span>Maximum 22</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" style="text-align: center; padding: 6rem 4rem;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Summer spots are limited</h2>
+      <p style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem;">Book your programming today</p>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </section>
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact" style="display: none;">
+    <div class="hero light">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+      <div class="hero-content">
+        <h1>Let's connect</h1>
+        <p>We'd love to help plan programming your community will remember.</p>
+      </div>
+    </div>
+
+    <section class="cream">
+      <div class="container-narrow contact-grid">
+        <div class="contact-info">
+          <div style="width: 100%; aspect-ratio: 1; overflow: hidden; margin-bottom: 2rem;">
+            <img src="AdamGuitar.avif" alt="Adam King" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3>Adam King</h3>
+          <p class="role">Founder & Instructor</p>
+          
+          <div class="contact-item">
+            <label>Phone</label>
+            <p>(631) 871-0592</p>
+          </div>
+          
+          <div class="contact-item">
+            <label>Email</label>
+            <p>reprisemusiclessons@gmail.com</p>
+          </div>
+          
+          <div class="contact-item">
+            <label>Location</label>
+            <p>PO Box 1864<br>Miller Place, NY 11764</p>
+          </div>
+          
+          <div class="contact-social">
+            <label style="display: block; margin-bottom: 1rem;">Follow</label>
+            <a href="https://www.facebook.com/reprisemusiclessons">Facebook</a>
+            <a href="https://www.instagram.com/reprise_music_programs/" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              @reprise_music_programs
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow">Send a Message</p>
+          <form class="contact-form">
+            <div class="form-row">
+              <input type="text" placeholder="First name">
+              <input type="text" placeholder="Last name">
+            </div>
+            <input type="email" placeholder="Email address">
+            <input type="text" placeholder="Organization">
+            <textarea placeholder="Tell us about your programming needs..."></textarea>
+            <button type="submit" class="btn btn-solid" style="margin-top: 1rem;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h3>Stay updated</h3>
+      <p>Join our mailing list for new programs and seasonal offerings</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Reprise</h3>
+        <p>Bringing creative music and art programming to libraries and communities for nearly 20 years.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Adam King</p>
+        <p>(631) 871-0592</p>
+      </div>
+      <div class="footer-col">
+        <h4>Email</h4>
+        <a href="mailto:reprisemusiclessons@gmail.com" class="accent">reprisemusiclessons<br>@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.facebook.com/reprisemusiclessons">Facebook</a>
+        <a href="https://www.instagram.com/reprise_music_programs/" style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @reprise_music_programs
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Reprise Music Programs</span>
+      <span>Miller Place, NY</span>
+    </div>
+  </footer>
+
+  <script>
+    // Simple page navigation
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href').slice(1);
+        
+        // Hide all sections
+        document.querySelectorAll('body > section').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show target section
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.style.display = 'block';
+          window.scrollTo(0, 0);
+        }
+        
+        // Update nav active state
+        document.querySelectorAll('.nav-links a').forEach(navLink => {
+          navLink.classList.remove('active');
+        });
+        document.querySelector(`.nav-links a[href="#${targetId}"]`)?.classList.add('active');
+      });
+    });
+
+    // Tab functionality for programs page
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        
+        // Update active tab
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Show active content
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById(tabId)?.classList.add('active');
+      });
+    });
+
+    // Show home by default
+    document.getElementById('home').style.display = 'block';
+  </script>
+
+</body>
+</html>
